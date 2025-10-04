@@ -9,6 +9,6 @@ class Solution {
             int ele = arr[0];
             if(arr[ele] == ele) return ele;
             swap(0,ele,arr);
-        }
+        } 
     }
 }
