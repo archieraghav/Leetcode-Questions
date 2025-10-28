@@ -1,0 +1,28 @@
+//contains duplicate
+package leetcodeQuestions;
+
+import java.util.HashSet;
+
+public class leetcode217 {
+    public static void duplicate(int [] arr){
+        int n = arr.length;
+        HashSet<Integer> set = new HashSet<>();
+        HashSet<Integer> duplicates = new HashSet<>();
+        for(int i = 0; i < n; i++){
+            if(!set.isEmpty() && set.contains(arr[i])){
+                duplicates.add(arr[i]);
+            }
+            else{
+                set.add(arr[i]);
+            }
+        }
+
+        if(duplicates.isEmpty()) System.out.println("DOES NOT CONTAINS DUPLICATE");
+        else System.out.println("CONTAINS DUPLICATE");
+
+    }
+    public static void main(String[] args) {
+        int [] arr = {1,2,3,4,5};
+        duplicate(arr);
+    }
+}
