@@ -1,0 +1,26 @@
+//concatenation of array
+package leetcodeQuestions;
+public class leetcode1929 {
+    public static void concatenate(int [] arr){
+        int [] ans = new int[arr.length * 2];
+        int n = arr.length;
+        for(int i = 0; i< arr.length; i++){
+            ans[i] = arr[i];
+            ans[i+n] = arr[i];
+        }
+        for(int ele : ans){
+            System.out.print(ele + " ");
+        }
+
+    }
+    public static void print(int [] arr){
+        for(int ele : arr){
+            System.out.print(ele + " ");
+        }
+    }
+    public static void main(String[] args) {
+        int [] nums = {1,2,1};
+        concatenate(nums);
+
+    }
+}
