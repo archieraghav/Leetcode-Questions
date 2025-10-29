@@ -1,0 +1,39 @@
+//valid anagram
+package leetcodeQuestions;
+
+import java.util.Arrays;
+
+public class leetcode242 {
+    public static void anagram(String s1, String s2){
+        char [] s1array = s1.toCharArray();
+        char [] s2array = s2.toCharArray();
+        Arrays.sort(s1array);
+        Arrays.sort(s2array);
+
+        boolean flag = false;
+        if(s1array.length != s2array.length){
+            flag = true;
+        }
+        else{
+        int i = 0, j = 0;
+        while( i < s1array.length && j< s2array.length){
+            if(s1array[i] == s2array[j]){
+                i++;
+                j++;
+            }
+            else{
+                flag = true;
+                break;
+            }
+        }
+    }
+
+        if(flag == true) System.out.println("NOT AN ANAGRAM");
+        else System.out.println("AN ANAGRAM");
+    }
+    public static void main(String[] args) {
+        String s1 = "racecax";
+        String s2 = "carrace";
+        anagram(s1, s2);
+    }
+}
