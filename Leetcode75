@@ -1,0 +1,37 @@
+//sort the colors by using dutch flag algorithm
+package leetcodeQuestions;
+
+public class leetcode75 {
+    public static void sortColors(int [] arr){
+        int lo = 0;
+        int mid = 0;
+        int hi = arr.length - 1;
+
+        while(mid <= hi){
+            if(arr[mid] == 0){
+                int temp = arr[mid];
+                arr[mid] = arr[lo];
+                arr[lo] = temp;
+                mid++;
+                lo++;
+            }
+            else if(arr[mid] == 2){
+                int temp = arr[mid];
+                arr[mid] = arr[hi];
+                arr[hi] = temp;
+                hi--;
+            }
+            else mid ++;
+        }
+    }
+    public static void printArray(int [] arr){
+        for(int ele : arr){
+            System.out.print(ele + " ");
+        }
+    }
+    public static void main(String[] args) {
+        int [] arr = {2,0,2,1,1,0,2,1,0,0};
+        sortColors(arr);
+        printArray(arr);
+    }
+}
