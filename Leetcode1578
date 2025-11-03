@@ -1,0 +1,21 @@
+class Solution {
+    public int minCost(String s, int[] arr) {
+        int ans = 0;
+        for(int ele : arr) ans = ans+ele;
+
+        int i = 0;
+        while(i < s.length()){
+            int j = i; 
+            int max = 0;
+
+            while(j < s.length() && s.charAt(i) == s.charAt(j)){
+                max = Math.max(max, arr[j]);
+                j++;
+            }
+
+            ans = ans - max;
+            i = j;
+        }
+        return ans;
+    }
+}
